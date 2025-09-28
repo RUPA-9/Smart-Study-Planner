@@ -1,0 +1,239 @@
+/* General Body Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern font */
+    margin: 0;
+    padding: 0;
+    color: #34495e; /* Darker, sophisticated text color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Full viewport height */
+    background: linear-gradient(rgba(240, 248, 255, 0.8), rgba(240, 248, 255, 0.8)), url('https://source.unsplash.com/1600x900/?study,desk') no-repeat center center fixed;
+    background-size: cover; /* Ensure background covers the entire area */
+    box-sizing: border-box;
+}
+
+/* Container for the Planner */
+.container {
+    background-color: rgba(255, 255, 255, 0.95); /* Slightly transparent white for a clean look */
+    padding: 35px 45px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* More pronounced shadow */
+    width: 100%;
+    max-width: 800px; /* Slightly wider */
+    margin: 30px; /* Ensure some margin on smaller screens */
+    box-sizing: border-box;
+    backdrop-filter: blur(5px); /* Subtle blur effect behind the container */
+}
+
+/* Headings */
+h1, h2 {
+    text-align: center;
+    color: #2c3e50; /* A deep, rich blue-grey */
+    margin-bottom: 30px;
+    font-weight: 600; /* Slightly bolder headings */
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #2980b9; /* A vibrant blue for the main title */
+}
+
+h2 {
+    font-size: 1.8em;
+    border-bottom: 2px solid #ecf0f1; /* Subtle separator */
+    padding-bottom: 10px;
+}
+
+/* Task Input Section */
+.task-input {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.task-input input[type="text"],
+.task-input input[type="date"],
+.task-input textarea {
+    padding: 14px;
+    border: 1px solid #bdc3c7; /* Lighter, subtle border */
+    border-radius: 8px; /* Softer rounded corners */
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.task-input input:focus,
+.task-input textarea:focus {
+    border-color: #3498db; /* Blue highlight on focus */
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.2);
+    outline: none;
+}
+
+.task-input textarea {
+    resize: vertical;
+    min-height: 90px;
+}
+
+.task-input button#addTaskBtn {
+    background-color: #2ecc71; /* Emerald green for add button */
+    color: white;
+    padding: 14px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    letter-spacing: 0.5px;
+}
+
+.task-input button#addTaskBtn:hover {
+    background-color: #27ae60; /* Darker emerald on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Task List Section */
+.task-list-container {
+    margin-top: 30px;
+}
+
+#taskList {
+    list-style: none;
+    padding: 0;
+}
+
+#taskList li {
+    background-color: #f8fcfd; /* Very light background for tasks */
+    border: 1px solid #e0e6e8; /* Subtle border */
+    padding: 18px 25px;
+    margin-bottom: 12px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Soft inner shadow */
+    transition: all 0.3s ease;
+}
+
+#taskList li:hover {
+    transform: translateY(-3px); /* Lift effect on hover */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+#taskList li.completed {
+    background-color: #eafaea; /* Light pastel green for completed */
+    text-decoration: line-through;
+    color: #7f8c8d; /* Faded text for completed tasks */
+    border-color: #d1e7d1;
+}
+
+.task-details h3 {
+    margin: 0 0 8px 0;
+    color: #34495e; /* Consistent with body text but slightly darker */
+    font-size: 1.3em;
+}
+
+.task-details p {
+    margin: 0;
+    font-size: 1em;
+    line-height: 1.5;
+    color: #5a6a7c;
+}
+
+.task-details .due-date {
+    font-size: 0.9em;
+    color: #95a5a6; /* Softer grey for due date */
+    margin-top: 10px;
+    display: block;
+    font-weight: 500;
+}
+
+/* Task Action Buttons */
+.task-actions {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+    align-self: flex-end;
+}
+
+.task-actions button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.95em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: 500;
+}
+
+.task-actions button:hover {
+    transform: translateY(-1px);
+}
+
+.task-actions .complete-btn {
+    background-color: #3498db; /* Peter River blue */
+    color: white;
+}
+
+.task-actions .complete-btn:hover {
+    background-color: #2980b9; /* Darker blue */
+}
+
+.task-actions .edit-btn {
+    background-color: #f1c40f; /* Sunflower yellow */
+    color: #34495e;
+}
+
+.task-actions .edit-btn:hover {
+    background-color: #f39c12; /* Orange-yellow */
+}
+
+.task-actions .delete-btn {
+    background-color: #e74c3c; /* Alizarin red */
+    color: white;
+}
+
+.task-actions .delete-btn:hover {
+    background-color: #c0392b; /* Darker red */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .container {
+        margin: 20px;
+        padding: 25px 30px;
+    }
+    h1 {
+        font-size: 2em;
+    }
+    h2 {
+        font-size: 1.5em;
+    }
+    .task-input button#addTaskBtn {
+        font-size: 16px;
+        padding: 12px 20px;
+    }
+    #taskList li {
+        padding: 15px 20px;
+    }
+}
+
+@media (max-width: 500px) {
+    .container {
+        margin: 15px;
+        padding: 20px 25px;
+    }
+    .task-actions {
+        flex-direction: column;
+        gap: 8px;
+        width: 100%;
+        align-self: stretch; /* Stretch buttons to full width */
+    }
+    .task-actions button {
+        width: 100%;
+        text-align: center;
+    }
+}
